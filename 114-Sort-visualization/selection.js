@@ -11,7 +11,7 @@ function selectionSort() {
 
   if (selectionAlreadySortedIdx == elements.length - 1) {
     console.log("DONE!");
-    done = true;
+    stop();
     return;
   }
 

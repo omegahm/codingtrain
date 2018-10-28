@@ -7,5 +7,5 @@ function bubbleSort() {
   }
 
   console.log("DONE!");
-  done = true;
+  stop();
 }
