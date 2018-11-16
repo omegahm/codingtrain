@@ -12,3 +12,4 @@ Coding Train Coding Challenges
 - [#089 - Langtons-ant](https://omegahm.github.io/codingtrain/089-Langtons-ant/)
 - [#093 - Double-pendulum](https://omegahm.github.io/codingtrain/093-Double-pendulum/)
 - [#114 - Sort visualization](https://omegahm.github.io/codingtrain/114-Sort-visualization/)
+- [The Matrix Symbols](https://omegahm.github.io/codingtrain/The-Matrix/)
