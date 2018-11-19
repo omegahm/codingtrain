@@ -23,9 +23,10 @@ class KochLine {
 
 var kochlines = [];
 var iterations = 0;
+var wiggle = false;
 
 function setup() {
-  createCanvas(windowWidth-10, windowHeight-20);
+  createCanvas(windowWidth - 10, windowHeight - 20);
   kochlines.push(new KochLine(createVector(width / 8, 3 * height / 4), createVector(7 * width / 8, 3 * height / 4)));
 }
 
@@ -34,7 +35,7 @@ function keyPressed(event) {
     iterations++;
 
     var newKochlines = [];
-    if (iterations % 5 == 0) {
+    if (iterations % 6 == 0) {
       newKochlines.push(new KochLine(createVector(width / 8, 3 * height / 4), createVector(7 * width / 8, 3 * height / 4)));
     } else {
       for (k of kochlines) {
@@ -47,13 +48,29 @@ function keyPressed(event) {
     }
 
     kochlines = newKochlines;
+  } else if (event.key === "w") {
+    wiggle = !wiggle;
   }
 }
 
 function draw() {
   background(51);
+  textAlign(CENTER);
+  textSize(48);
+  fill(255);
+  noStroke();
+  text("Press Space", 0, height / 10, width, height);
+
   strokeWeight(5);
+
   for (k of kochlines) {
     k.show();
+  }
+
+  if (wiggle) {
+    for (k of kochlines) {
+      k.start.add(p5.Vector.random2D());
+      k.end.add(p5.Vector.random2D());
+    }
   }
 }
